@@ -49,5 +49,25 @@
         </div>
     </div>
     <h3>Internship Programs</h3>
-    
+    <!-- <ul>
+      <li *ngFor="let item of content">
+        {{ item.type }} - {{ item.duration }}
+        <button (click)="getContentById(item.contentId)">{{ item.join_link_text }}</button>
+      </li>
+    </ul> -->
+
+    <div class="row">
+        <div *ngFor="let item of content"class="col-xl-4 col-lg-3 col-sm-3 col-6 mt-4 img-fluid  align-items-center justify-content-center" >
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.type }}</h4>
+                    <h6 class="card-text">{{ item.duration }}</h6>
+                    <br>
+                    <p href="#" class="card-link">{{item.text}}</p>
+                    <br>
+                    <button type="button" class="btn btn-primary rounded-pill btn-sm">Join Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
