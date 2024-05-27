@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobComponent } from './job/job.component';
 import { JobCardComponent } from './Module/job-card/job-card.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { TestComponent } from './test/test.component';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { JobCardComponent } from './Module/job-card/job-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
