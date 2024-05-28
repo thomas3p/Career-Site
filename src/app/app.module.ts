@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { InternshipComponent } from './internship/internship.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     HeaderComponent,
     InternshipComponent,
+    FooterComponent,
   
   ],
   imports: [
