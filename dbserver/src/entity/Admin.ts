@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
+import { User } from './User';
 
 @Entity()
 export class Admin {
@@ -7,9 +8,13 @@ export class Admin {
     id: number
 
     @Column()
-    user: string
+    username: string
 
     @Column()
     password: string
+    
+    @ManyToOne(() => User, user => user.login)
+    @JoinColumn({ name: 'user_id' })
+    user: User;
 
 }
