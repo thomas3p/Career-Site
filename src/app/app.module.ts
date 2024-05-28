@@ -7,6 +7,7 @@ import { JobComponent } from './job/job.component';
 import { JobCardComponent } from './Module/job-card/job-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminComponent } from './admin/admin.component';
+import { JobListComponent } from './job-list/job-list.component';
 // import { TestComponent } from './test/test.component';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AdminComponent } from './admin/admin.component';
     JobComponent,
     JobCardComponent,
     AdminComponent,
+    JobListComponent,
   ],
   imports: [
     BrowserModule,
