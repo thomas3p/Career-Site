@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { JobComponent } from './job/job.component';
 import { JobCardComponent } from './Module/job-card/job-card.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdminComponent } from './admin/admin.component';
 // import { TestComponent } from './test/test.component';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     JobComponent,
     JobCardComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
