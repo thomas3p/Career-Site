@@ -11,6 +11,7 @@ export class JobComponent {
   id:string=''
   data:any
   jobs:any
+  team:any
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient
@@ -21,17 +22,16 @@ export class JobComponent {
     this.http.get('http://localhost:3000/jobs/'+this.id).subscribe(
       request=>{
         this.data = request
-        console.log(request);
-        console.log(this.data);
-      }
-    )
-    this.http.get('http://localhost:3000/jobs').subscribe(
-      req=>{
+        this.http.get('http://localhost:3000/jobs/team/'+this.data.team.id).subscribe(
+        req=>{
         this.jobs = req
         console.log(req);
         console.log(this.jobs);
       }
     )
+      }
+    )
+    
   }
   
   ngOnInit(): void {

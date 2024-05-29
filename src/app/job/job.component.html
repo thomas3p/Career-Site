@@ -1,10 +1,11 @@
 <app-navbar></app-navbar>
 <div class="jobs-container">
     <h1>{{data.title}}</h1>
+    <br>
     <div class="job-meta">
-        <p class="department">Team: {{data.team.tag_name}}</p>
-        <p class="level">Type: {{data.type.tag_name}}</p>
-        <p class="location">Location: {{data.location.tag_name}}</p>
+        <span class="department">Team: {{data.team.tag_name}}</span>|
+        <span class="level">Type: {{data.type.tag_name}}</span>|
+        <span class="location">Location: {{data.location.tag_name}}</span>
     </div>
     <button class="apply-button">Apply Now</button>
     <div class="job-requirements">
