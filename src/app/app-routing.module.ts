@@ -3,13 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { JobListComponent } from './job-list/job-list.component';
 
-const routes: Routes = [
-  {path:'admin',component:AdminComponent},
-  {path:'jobs',component:JobListComponent},
+
 
 import { TeamsComponent } from './teams/teams.component';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { LocationsComponent } from './locations/locations.component';
+import { JobComponent } from './job/job.component';
 
 const routes: Routes = [
   {
@@ -28,8 +27,19 @@ const routes: Routes = [
   {
     path: 'locations',
     component: LocationsComponent,
-  }
-
+  },{
+    path:'admin',
+    component:AdminComponent
+  },
+  {
+    path:'jobs',
+    component:JobListComponent
+  },
+  {
+    path:'jobs/team/:id',
+    component:JobListComponent
+  },
+  {path:'jobs/:id',component:JobComponent}
 ];
 
 @NgModule({

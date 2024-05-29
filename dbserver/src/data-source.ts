@@ -6,6 +6,9 @@ import { Job } from "./entity/Job"
 import { Team } from "./entity/Team"
 import { Location } from "./entity/Location"
 import { Type } from "./entity/Type"
+import { Detail } from "./entity/Detail"
+import { Qualification } from "./entity/Qualification"
+import { Responsibility } from "./entity/Responsibility"
 // import { Tag } from "./entity/Tag"
 
 
@@ -18,7 +21,7 @@ export const AppDataSource = new DataSource({
     database: "postgres",
     synchronize: true,
     logging: false,
-    entities: [User, Admin, Job, Team, Location, Type],
+    entities: [User, Admin, Job, Team, Location, Type,Detail,Qualification,Responsibility],
     migrations: [],
     subscribers: [],
 })

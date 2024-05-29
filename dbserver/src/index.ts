@@ -8,6 +8,9 @@ const jwt=require('jsonwebtoken');
 import 'reflect-metadata';
 import { User } from "./entity/User";
 import { Job } from "./entity/Job";
+import { Team } from "./entity/Team";
+import { Location } from "./entity/Location";
+import { Type } from "./entity/Type";
 
 const app = express();
 app.use(bodyParser.json());
@@ -58,69 +61,111 @@ AppDataSource.initialize().then(async () => {
     });
 
         // Create Job endpoint
-        app.post('/jobs', async (req, res) => {
-            const { title, qualifications, details, responsibility, teamId, locationId, typeId } = req.body;
-            
-            try {
-                const jobRepository = AppDataSource.getRepository(Job);
+        // Create Job endpoint
+app.post('/jobs', async (req, res) => {
+    const { title, qualifications, details, responsibility, teamId, locationId, typeId } = req.body;
     
-                const job = new Job();
-                job.title = title;
-                job.qualifications = qualifications;
-                job.details = details;
-                job.responsibility = responsibility;
-                job.team = teamId; // Assuming these are the foreign key values
-                job.location = locationId;
-                job.type = typeId;
-    
-                await jobRepository.save(job);
-    
-                res.status(201).json({ message: 'Job created successfully', job });
-            } catch (err) {
-                console.error(err);
-                res.status(500).json({ error: 'Error creating job' });
-            }
-        });
+    try {
+        const jobRepository = AppDataSource.getRepository(Job);
+        const teamRepository = AppDataSource.getRepository(Team);
+        const locationRepository = AppDataSource.getRepository(Location);
+        const typeRepository = AppDataSource.getRepository(Type);
+
+        // Fetch team, location, and type entities
+        const team = await teamRepository.findOne(teamId);
+        const location = await locationRepository.findOne(locationId);
+        const type = await typeRepository.findOne(typeId);
+
+        // Create new job instance
+        const job = new Job();
+        job.title = title;
+
+        // Assuming qualifications, details, and responsibilities are arrays of strings
+        job.qualifications = qualifications.map(q => ({ description: q }));
+        job.details = details.map(d => ({ description: d }));
+        job.responsibilities = responsibility.map(r => ({ description: r }));
+
+        // Assign team, location, and type
+        job.team = team;
+        job.location = location;
+        job.type = type;
+
+        // Save the job
+        await jobRepository.save(job);
+
+        res.status(201).json({ message: 'Job created successfully', job });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error creating job' });
+    }
+});
+
     
         // Get Job List endpoint
         app.get('/jobs', async (req, res) => {
             try {
                 const jobRepository = AppDataSource.getRepository(Job);
                 const jobs = await jobRepository.find({
-                    relations: ['team', 'location', 'type'],
+                    relations: ['team', 'location', 'type', 'qualifications', 'details', 'responsibilities'],
                 });
-    
+
                 res.json(jobs);
             } catch (err) {
                 console.error(err);
                 res.status(500).json({ error: 'Error fetching job list' });
             }
         });
+
     
-        // Get Job by ID endpoint
-        app.get('/jobs/:id', async (req, res) => {
-            const jobId = parseInt(req.params.id);
-            if (isNaN(jobId)) {
-                return res.status(400).json({ error: 'Invalid job ID' });
-            }
-    
-            try {
-                const jobRepository = AppDataSource.getRepository(Job);
-                const job = await jobRepository.findOne({
-                    where: {
-                        id: jobId
-                    }})
-    
-                if (!job) {
-                    return res.status(404).json({ error: 'Job not found' });
-                }
-    
-                res.json(job);
-            } catch (err) {
-                console.error(err);
-                res.status(500).json({ error: 'Error fetching job' });
-            }
+       // Get Job by ID endpoint
+app.get('/jobs/:id', async (req, res) => {
+    const jobId = parseInt(req.params.id);
+    if (isNaN(jobId)) {
+        return res.status(400).json({ error: 'Invalid job ID' });
+    }
+
+    try {
+        const jobRepository = AppDataSource.getRepository(Job);
+        const job = await jobRepository.findOne({
+            where: {
+                id: jobId
+            },
+            relations: ['team', 'location', 'type', 'qualifications', 'details', 'responsibilities']
+        })
+
+        if (!job) {
+            return res.status(404).json({ error: 'Job not found' });
+        }
+
+        res.json(job);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error fetching job' });
+    }
+});
+/// Get Jobs by Team endpoint
+app.get('/jobs/team/:teamId', async (req, res) => {
+    const teamId = parseInt(req.params.teamId);
+    if (isNaN(teamId)) {
+        return res.status(400).json({ error: 'Invalid team ID' });
+    }
+
+    try {
+        const jobRepository = AppDataSource.getRepository(Job);
+        const jobs = await jobRepository.find({
+            where: {
+                team: { id: teamId }
+            },
+            relations: ['team', 'location', 'type', 'qualifications', 'details', 'responsibilities']
         });
+
+        res.json(jobs);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error fetching jobs by team' });
+    }
+});
+
 
 
 

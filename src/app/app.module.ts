@@ -12,10 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TeamsComponent } from './teams/teams.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { LocationsComponent } from './locations/locations.component';
-// import { TestComponent } from './test/test.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -40,7 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModalModule
+    NgbModalModule,
     CommonModule,
     FormsModule
   ],

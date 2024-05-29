@@ -1,7 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from 'typeorm';
 import { Location } from './Location';
 import { Team } from './Team';
 import { Type } from './Type';
+import { Qualification } from './Qualification';
+import { Detail } from './Detail';
+import { Responsibility } from './Responsibility';
 
 @Entity('Job')
 export class Job {
@@ -11,14 +14,14 @@ export class Job {
     @Column({ type: 'varchar', length: 100 })
     title: string;
 
-    @Column({ type: 'text', nullable: true })
-    qualifications: string;
+    @OneToMany(() => Qualification, qualification => qualification.job, { nullable: true })
+    qualifications: Qualification[];
 
-    @Column({ type: 'text', nullable: true })
-    details: string;
+    @OneToMany(() => Detail, detail => detail.job, { nullable: true })
+    details: Detail[];
 
-    @Column({ type: 'text', nullable: true })
-    responsibility: string;
+    @OneToMany(() => Responsibility, responsibility => responsibility.job, { nullable: true })
+    responsibilities: Responsibility[];
 
     @ManyToOne(() => Team, team => team.jobs, { nullable: true })
     team: Team;

@@ -274,3 +274,16 @@ body {
         margin-bottom: 20px;
     }
 }
+.header {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.sub-header {
+    font-size: 1rem;
+    color: gray;
+}
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}

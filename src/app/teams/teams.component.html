@@ -19,7 +19,7 @@
           <h5 class="card-title">{{ item.title }}</h5>
           <p class="card-text">{{ item.detail }}</p>
           <a [routerLink]="['/teams-detail', item.title]" class="card-link">Learn more</a>
-          <a href="#" (click)="viewJobs(item)" class="card-link">View Jobs</a>
+          <a [routerLink]="['/jobs/team',item.id]" class="card-link">View Jobs</a>
         </div>
     </div>
 </div>  

@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 export class TeamsService {
   teams = [
     {
+      id:4,
       title: 'Technology',
       detail: 'Develop the products and tools of the future for billions of users.',
       imageURL: 'assets/img/technology.png',
@@ -20,6 +21,7 @@ export class TeamsService {
       job4: 'IT Support',
     },
     {
+      id:1,
       title: 'Design',
       detail: 'Create beautiful and intuitive experiences.',
       imageURL: 'assets/img/Design.png',
@@ -33,6 +35,7 @@ export class TeamsService {
       job4: 'Senior UX/UI Engineer, Android',
     },
     {
+      id:2,
       title: 'Marketing & Communications',
       detail: 'Connect users to the product magic.',
       imageURL: 'assets/img/Marketing.png',
@@ -46,6 +49,7 @@ export class TeamsService {
       job4: 'Senior Staff Data Scientist',
     },
     {
+      id:8,
       title: 'Legal',
       detail: 'Deliver the analysis and insights we use to innovate.',
       imageURL: 'assets/img/Legal.png',
@@ -58,6 +62,7 @@ export class TeamsService {
       job4: 'Legal Manager',
     },
     {
+      id:6,
       title: 'Finance',
       detail: 'Design and manage solutions to support our global business.',
       imageURL: 'assets/img/Finance.png',
@@ -71,6 +76,7 @@ export class TeamsService {
       job4: 'Finance Lead, Payments, Finance',
     },
     {
+      id:7,
       title: 'People',
       detail: 'Find, grow, and support the people who make Google great.',
       imageURL: 'assets/img/People.png',
