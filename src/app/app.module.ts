@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobComponent } from './job/job.component';
-import { JobCardComponent } from './Module/job-card/job-card.component';
+// import { JobCardComponent } from './Module/job-card/job-card.component';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminComponent } from './admin/admin.component';
 import { JobListComponent } from './job-list/job-list.component';
@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     JobComponent,
-    JobCardComponent,
+    // JobCardComponent,
     AdminComponent,
     JobListComponent,
   ],
