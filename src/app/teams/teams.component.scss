@@ -37,6 +37,7 @@ body {
 }
 
 .centered-content {
+  font-family: "Noto Sans", sans-serif;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
@@ -57,6 +58,7 @@ body {
 
 /* Styles for the card */
 .card-container {
+  font-family: "Noto Sans", sans-serif;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

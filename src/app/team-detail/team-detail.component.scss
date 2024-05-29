@@ -35,6 +35,7 @@ body {
 }
 
 .container-image {
+    font-family: "Noto Sans", sans-serif;
     display: flex;
     flex-direction: row;
     align-items: flex-start; 
@@ -83,6 +84,7 @@ body {
 }
 
 .container-info {
+    font-family: "Noto Sans", sans-serif;
     max-width: 1200px;
     margin: auto;
     padding: 20px;
@@ -126,6 +128,7 @@ body {
 
 //blogs
 .blogs-slider {
+    font-family: "Noto Sans", sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -193,6 +196,7 @@ body {
 
 //jobs section
 .jobs-container {
+    font-family: "Noto Sans", sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -243,6 +247,7 @@ body {
 }
 
 .jobs-container .view-all-btn {
+    font-family: "Noto Sans", sans-serif;
     display: block;
     width: 150px;
     padding: 10px;
