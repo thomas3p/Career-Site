@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!loginstatus">
   <h2>Login</h2>
   <form (ngSubmit)="login()">
     <div>
@@ -10,5 +10,20 @@
       <input type="password" id="password" name="password" [(ngModel)]="password" required>
     </div>
     <button type="submit">Login</button>
+  </form>
+</div>
+<div *ngIf="loginstatus">
+  <h2>Create Job</h2>
+  <form (ngSubmit)="createJob()">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" [(ngModel)]="title" required>
+    </div>
+    <div>
+      <label for="qualifications">Qualifications:</label>
+      <textarea id="qualifications" name="qualifications" [(ngModel)]="qualifications"></textarea>
+    </div>
+    <!-- Add more input fields for other job details -->
+    <button type="submit">Create Job</button>
   </form>
 </div>
