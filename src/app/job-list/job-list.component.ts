@@ -20,20 +20,29 @@ export class JobListComponent implements OnInit{
         this.team = param['id']
       })
       if(this.team != 0){
-        
-      this.http.get('http://localhost:3000/jobs/team/'+this.team).subscribe(
-        request=>{
-          this.jobs = request
-          console.log(request);
-          console.log(this.jobs);
+        if(this.team!=undefined){
+          this.http.get('http://localhost:3000/jobs/team/'+this.team).subscribe(
+            request=>{
+              this.jobs = request
+              // console.log(request);
+              // console.log(this.jobs);
+            }
+          )
+        }else{
+          this.http.get('http://localhost:3000/jobs').subscribe(
+          request=>{
+            this.jobs = request
+            // console.log(request);
+            // console.log(this.jobs);
+          }
+        )
         }
-      )
       }else{
         this.http.get('http://localhost:3000/jobs').subscribe(
         request=>{
           this.jobs = request
-          console.log(request);
-          console.log(this.jobs);
+          // console.log(request);
+          // console.log(this.jobs);
         }
       )
       }

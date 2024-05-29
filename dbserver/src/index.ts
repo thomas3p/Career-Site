@@ -143,7 +143,7 @@ app.get('/jobs/:id', async (req, res) => {
         res.status(500).json({ error: 'Error fetching job' });
     }
 });
-/// Get Jobs by Team endpoint
+// Get Jobs by Team endpoint
 app.get('/jobs/team/:teamId', async (req, res) => {
     const teamId = parseInt(req.params.teamId);
     if (isNaN(teamId)) {
