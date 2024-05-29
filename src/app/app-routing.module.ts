@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
+import { JobListComponent } from './job-list/job-list.component';
 // import { Admin } from 'dbserver/src/entity/Admin';
 
 const routes: Routes = [
   {path:'admin',component:AdminComponent},
+  {path:'jobs',component:JobListComponent},
+
 ];
 
 @NgModule({

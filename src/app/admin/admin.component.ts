@@ -1,38 +1,30 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../Service/auth.service';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit{
   username: string = '';
   password: string = '';
-  loginstatus=false;
-  constructor(private http: HttpClient) { }
-body={}
-  login() {
-    this.body={username:this.username,
-      password:this.password
-    }
-    console.log(this.body);
-    
-    this.http.post('http://localhost:3000/login', this.body)
-      .subscribe(
-        response => {
-          this.loginstatus = true
-        },
-        error => {
-          console.log('Login failed:', error);
-          // Handle login error (display error message, clear form fields, etc.)
-        }
-      );
+  loginstatus = false
+  constructor(private http: HttpClient,private auth:AuthService) { }
+  
+  ngOnInit(): void {
+    this.loginstatus = this.auth.getstatus()
   }
+  
   title: string = '';
   qualifications: string = '';
 
-
+  login(){
+    this.auth.login(this.username,this.password)
+    this.loginstatus = this.auth.getstatus()
+    
+  }
   createJob(): void {
     const jobData = { title: this.title, qualifications: this.qualifications /* Add other job data */ };
     this.http.post<any>('http://localhost:3000/jobs', jobData)

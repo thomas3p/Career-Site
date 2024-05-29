@@ -86,7 +86,9 @@ AppDataSource.initialize().then(async () => {
         app.get('/jobs', async (req, res) => {
             try {
                 const jobRepository = AppDataSource.getRepository(Job);
-                const jobs = await jobRepository.find();
+                const jobs = await jobRepository.find({
+                    relations: ['team', 'location', 'type'],
+                });
     
                 res.json(jobs);
             } catch (err) {
