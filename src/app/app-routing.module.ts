@@ -4,7 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 // import { Admin } from 'dbserver/src/entity/Admin';
 
 const routes: Routes = [
-  {path:'register',component:AdminComponent},
+  {path:'admin',component:AdminComponent},
 ];
 
 @NgModule({

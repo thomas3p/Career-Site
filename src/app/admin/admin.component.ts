@@ -11,13 +11,17 @@ export class AdminComponent {
   password: string = '';
 
   constructor(private http: HttpClient) { }
-
+body={}
   login() {
-    this.http.post<any>('http://localhost:3000/login', { username: this.username, password: this.password })
+    this.body={username:this.username,
+      password:this.password
+    }
+    console.log(this.body);
+    
+    this.http.post('http://localhost:3000/login', this.body)
       .subscribe(
         response => {
-          localStorage.setItem('token', response.token);
-          // Redirect to admin dashboard or perform any other action upon successful login
+          console.log(response);
         },
         error => {
           console.log('Login failed:', error);

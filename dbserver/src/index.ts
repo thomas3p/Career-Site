@@ -12,7 +12,16 @@ import { Job } from "./entity/Job";
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+const corsOptions = {
+    origin: 'http://localhost:4200',
+    methods: 'GET,POST',
+    allowedHeaders: 'Content-Type,Authorization'
+};
+app.use(cors(corsOptions));
 
+app.use(cors({
+    origin: 'http://localhost:4200'
+}));
 const { PORT = 3000 } = process.env;
 
 AppDataSource.initialize().then(async () => {
@@ -35,8 +44,11 @@ AppDataSource.initialize().then(async () => {
 
             if (login && password == login.password) {
                 const token = jwt.sign({ id: login.user.id, username: login.username }, 'secret', { expiresIn: '1h' });
+                console.log("ok");
                 res.json({ token });
             } else {
+                console.log("fail");
+                
                 res.status(401).json({ error: 'Invalid credentials' });
             }
         } catch (err) {
