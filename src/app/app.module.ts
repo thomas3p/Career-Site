@@ -9,6 +9,7 @@ import { InternshipComponent } from './internship/internship.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { ContentInternshipComponent } from './content-internship/content-internship.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     InternshipComponent,
     FooterComponent,
+    ContentInternshipComponent,
   
   ],
   imports: [

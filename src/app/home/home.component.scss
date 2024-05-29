@@ -1,28 +1,57 @@
-.header {
-    background-image: url('https://plus.unsplash.com/premium_photo-1664392455446-1e636959468b?q=80&w=1945&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your image URL */
-    background-size: cover;
-    background-position: center;
-    height: 20rem; /* Set height to 20rem */
-    color: white;
+/* Style for the search container */
+.search-container {
+    top: 100%; /* Adjust as needed to position vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering trick */
+    width: 80%; /* Adjust width as needed */
+    z-index: 10; /* Ensure it appears above the image */
+}
+
+.search {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+    background: rgba(255, 255, 255 ); /* Slightly transparent background */
+    padding: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.header h1 {
-    font-size: 2rem; /* Adjust font size if needed */
-    margin-bottom: 1rem; /* Adjust margin if needed */
-}
-.search-bar {
-    padding: 10px;
-    margin-top: -40px;
-    width: fit-content;
-}
-.search-bar[_ngcontent-ng-c2944204830] {
-    display: flex;
 
+.search i {
+    margin-right: 10px;
+    color: #007bff; /* Adjust color as needed */
 }
-.form-control {
-    font-size: 1.5rem;
+
+.search input.form-control {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.search button.btn {
+    padding: 10px 20px;
+}
+.card img {
+    width: 100%; /* Make sure the image takes up the full width of the card */
+    height: auto; /* Maintain the aspect ratio of the image */
+    max-height: 150px; /* Limit the maximum height of the image */
+    object-fit: cover; /* Scale the image to cover the entire area of the card */
+    border-radius: 8px; /* Add a slight border-radius for better aesthetics */
+}
+
+.card {
+    border: none; /* Remove any default card borders */
+    overflow: hidden; /* Ensure the image fits within the card bounds */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add a subtle shadow for better visuals */
+}
+
+.container {
+    max-width: 1200px; /* Restrict the container's width for better alignment */
+    margin: auto; /* Center the container */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Ensure the row flexes and wraps correctly */
+}
+
+.col-xl-3, .col-lg-4, .col-md-4, .col-sm-6 {
+    padding: 50px; /* Add some padding around the columns for spacing */
 }
