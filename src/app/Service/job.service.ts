@@ -8,13 +8,7 @@ import { request } from 'express';
 export class JobService {
   jobs:any
   constructor(private http:HttpClient) { 
-    this.http.get('http://localhost:3000/jobs').subscribe(
-      request=>{
-        this.jobs = request
-        console.log(request);
-        
-      }
-    )
+    
   }
   getjob(){
     return this.jobs
