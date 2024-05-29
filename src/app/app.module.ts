@@ -15,7 +15,8 @@ import { CommonModule } from '@angular/common';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { LocationsComponent } from './locations/locations.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginCardComponent } from './login-card/login-card.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+// import { LoginCardComponent } from './login-card/login-card.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { LoginCardComponent } from './login-card/login-card.component';
     NavbarComponent,
     TeamDetailComponent,
     LocationsComponent,
-    LoginCardComponent
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

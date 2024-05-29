@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Service/auth.service';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { JobService } from '../Service/job.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,15 +12,21 @@ import { AuthService } from '../Service/auth.service';
 export class AdminComponent implements OnInit{
   username: string = '';
   password: string = '';
+  
+  title:string = ''
+  // qualifications
+  // details
+  // responsibility
+  // teamId
+  // locationId
+  // typeId
+  
   loginstatus = false
-  constructor(private http: HttpClient,private auth:AuthService) { }
+  // constructor() { }
   
   ngOnInit(): void {
     this.loginstatus = this.auth.getstatus()
   }
-  
-  title: string = '';
-  qualifications: string = '';
 
   login(){
     this.auth.login(this.username,this.password)
@@ -38,5 +46,52 @@ export class AdminComponent implements OnInit{
           console.error('Error creating job:', error);
         }
       );
+  }
+  jobForm: FormGroup;
+
+  constructor(private fb: FormBuilder, private jobService: JobService,private http: HttpClient,private auth:AuthService) {
+    this.jobForm = this.fb.group({
+      title: ['', Validators.required],
+      qualifications: this.fb.array([this.fb.control('')]),
+      details: this.fb.array([this.fb.control('')]),
+      responsibility: this.fb.array([this.fb.control('')]),
+      teamId: ['', Validators.required],
+      locationId: ['', Validators.required],
+      typeId: ['', Validators.required]
+    });
+  }
+
+  get_qualifications() {
+    return this.jobForm.get('qualifications') as FormArray;
+  }
+
+  get_details() {
+    return this.jobForm.get('details') as FormArray;
+  }
+
+  get_responsibility() {
+    return this.jobForm.get('responsibility') as FormArray;
+  }
+
+  addQualification() {
+    this.qualifications.push(this.fb.control(''));
+  }
+
+  addDetail() {
+    this.details.push(this.fb.control(''));
+  }
+
+  addResponsibility() {
+    this.responsibility.push(this.fb.control(''));
+  }
+
+  onSubmit() {
+    if (this.jobForm.valid) {
+      this.jobService.createJob(this.jobForm.value).subscribe(response => {
+        console.log('Job created successfully', response);
+      }, error => {
+        console.error('Error creating job', error);
+      });
+    }
   }
 }
