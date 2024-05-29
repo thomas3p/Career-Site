@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm"
-import { User } from './User';
+import { User } from "./User";
+
 
 @Entity()
 export class Admin {
@@ -13,7 +14,7 @@ export class Admin {
     @Column()
     password: string
     
-    @ManyToOne(() => User, user => user.login)
+    @ManyToOne(() => Admin, user => user.user)
     @JoinColumn({ name: 'user_id' })
     user: User;
 
