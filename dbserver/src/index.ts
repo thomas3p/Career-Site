@@ -33,7 +33,7 @@ AppDataSource.initialize().then(async () => {
                 relations: ['user']
             });
 
-            if (login && password == login.password) {
+            if (login && await bcrypt.compare(password, login.password)) {
                 const token = jwt.sign({ id: login.user.id, username: login.username }, 'secret', { expiresIn: '1h' });
                 res.json({ token });
             } else {
