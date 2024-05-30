@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="jobs-container">
+    <h1>{{data.title}}</h1>
+    <br>
+    <div class="job-meta">
+        <span class="department">Team: {{data.team.tag_name}}</span>|
+        <span class="level">Type: {{data.type.tag_name}}</span>|
+        <span class="location">Location: {{data.location.tag_name}}</span>
+    </div>
+    <button class="apply-button">Apply Now</button>
+    <div class="job-requirements">
+        <h4>Qualifications required</h4>
+        <ul >
+            <li *ngFor="let item of data.qualifications">{{item.description}}</li>
+        </ul>
+    </div>
+    <div class="job-requirements">
+        <h4>Job details</h4>
+        <ul>
+            <li *ngFor="let item of data.details">{{item.description}}</li>
+        </ul>
+    </div>
+    <div class="job-container">
+        <h4>Responsibility</h4>
+        <ul>
+            <li *ngFor="let item of data.responsibilities">{{item.description}}</li>
+
+        </ul>
+    </div>
+    
+</div>
+<div class="jobs-container">
+    <h2>Related</h2>
+    <a href="#" class="view-all-btn">View All Jobs</a>
+        
+    <table class="jobs-table">
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Team</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of jobs" [routerLink]="['/jobs', item.id]">
+                <td >{{item.title}}</td>
+                <td>{{item.team.tag_name}}</td>
+                <td>{{item.location.tag_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
