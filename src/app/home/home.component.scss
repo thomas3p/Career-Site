@@ -10,9 +10,12 @@
 .search {
     display: flex;
     align-items: center;
-    background: rgba(255, 255, 255 ); /* Slightly transparent background */
-    padding: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    // background: rgba(255, 255, 255 ); /* Slightly transparent background */
+    padding: 10px;
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#text{
+    font-size: 1.4rem;
 }
 
 .search i {
