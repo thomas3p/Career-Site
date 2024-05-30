@@ -1,0 +1,33 @@
+/* Style for the search container */
+.search-container {
+    top: 100%; /* Adjust as needed to position vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering trick */
+    width: 80%; /* Adjust width as needed */
+    z-index: 10; /* Ensure it appears above the image */
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    // background: rgba(255, 255, 255 ); /* Slightly transparent background */
+    padding: 10px;
+    // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#text{
+    font-size: 1.4rem;
+}
+
+.search i {
+    margin-right: 10px;
+    color: #007bff; /* Adjust color as needed */
+}
+
+.search input.form-control {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.search button.btn {
+    padding: 10px 20px;
+}
