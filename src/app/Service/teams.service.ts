@@ -35,7 +35,6 @@ export class TeamsService {
       job4: 'Senior UX/UI Engineer, Android',
     },
     {
-      title: 'Marketing',
       id:2,
       title: 'Marketing & Communications',
       detail: 'Connect users to the product magic.',

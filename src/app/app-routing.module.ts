@@ -3,25 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { InternshipComponent } from './internship/internship.component';
 import { ContentInternshipComponent } from './content-internship/content-internship.component';
-
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },{
-    path: 'home',
-    component: HomeComponent,
-   
-  },{
-    path: 'internship',
-    component: InternshipComponent,
-   
-  },{
-    path: 'contentInternship',
-    component: ContentInternshipComponent,
-   
-  },
 import { AdminComponent } from './admin/admin.component';
 import { JobListComponent } from './job-list/job-list.component';
 
@@ -33,11 +14,6 @@ import { LocationsComponent } from './locations/locations.component';
 import { JobComponent } from './job/job.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/teams',
-    pathMatch: 'full'
-  },
   {
     path: 'teams',
     component: TeamsComponent,
@@ -61,7 +37,24 @@ const routes: Routes = [
     path:'jobs/team/:id',
     component:JobListComponent
   },
-  {path:'jobs/:id',component:JobComponent}
+  {path:'jobs/:id',component:JobComponent},
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },{
+    path: 'home',
+    component: HomeComponent,
+   
+  },{
+    path: 'internship',
+    component: InternshipComponent,
+   
+  },{
+    path: 'contentInternship',
+    component: ContentInternshipComponent,
+   
+  },
 ];
 
 @NgModule({
