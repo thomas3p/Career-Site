@@ -106,7 +106,7 @@ app.post('/jobs', async (req, res) => {
             try {
                 const jobRepository = AppDataSource.getRepository(Job);
                 const jobs = await jobRepository.find({
-                    relations: ['team', 'location', 'type', 'qualifications', 'details', 'responsibilities'],
+                    relations: ['team', 'location', 'type'],
                 });
 
                 res.json(jobs);
