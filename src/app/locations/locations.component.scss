@@ -1,0 +1,116 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-family: "Noto Sans", sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.background-image {
+    width: auto; 
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: white;
+    font-family: 'Edu TAS Beginner', sans-serif;
+    padding: 10px 20px;
+}
+
+.text-overlay h1,
+.text-overlay p {
+    margin-left: 50px;
+}
+
+.text-overlay p {
+    font-size: 90px;
+}
+
+.centered-content {
+    font-family: "Noto Sans", sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.centered-content h1 {
+    font-size: 36px;
+    color: #000000;
+}
+
+.centered-content p {
+    font-size: 18px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center; /* จัดตำแหน่งให้อยู่ตรงกลาง */
+    gap: 10px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+    margin: 10px 0; /* เพิ่มระยะห่างบนและล่าง */
+}
+
+.tab-button {
+    font-family: "Noto Sans", sans-serif;
+    background: none;
+    border: none; /* เอาเส้นขอบออก */
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #666;
+}
+
+.tab-button:hover {
+    color: #000;
+}
+
+.tab-button.active {
+    color: #000;
+}
+
+#map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    height: 500px;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* กำหนดขนาดฟอนต์สำหรับหน้าจอขนาดเล็ก */
+@media screen and (max-width: 600px) {
+    .text-overlay h1 {
+        font-size: 60px;
+    }
+    .text-overlay p {
+        font-size: 60px;
+    }
+}
+
+/* ปรับขนาดของปุ่มสำหรับหน้าจอขนาดเล็ก */
+@media screen and (max-width: 600px) {
+    .tab-button {
+        padding: 10px 20px;
+    }
+}

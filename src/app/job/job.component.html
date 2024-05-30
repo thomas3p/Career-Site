@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<div class="jobs-container">
+    <h1>{{data.title}}</h1>
+    <br>
+    <div class="job-meta" id="home">
+        <span class="department">Team: {{data.team.tag_name}}</span>|
+        <span class="level">Type: {{data.type.tag_name}}</span>|
+        <span class="location">Location: {{data.location.tag_name}}</span>
+    </div>
+    <div class="job-requirements">
+        <h4>Qualifications required</h4>
+        <ul >
+            <li *ngFor="let item of data.qualifications">{{item.description}}</li>
+        </ul>
+    </div>
+    <div class="job-requirements">
+        <h4>Job details</h4>
+        <ul>
+            <li *ngFor="let item of data.details">{{item.description}}</li>
+        </ul>
+    </div>
+    <div class="job-container">
+        <h4>Responsibility</h4>
+        <ul>
+            <li *ngFor="let item of data.responsibilities">{{item.description}}</li>
+
+        </ul>
+    </div>
+    
+</div>
+<div class="container flex-column">
+    <h2>Apply Now</h2>
+    <p>{{data.title}} ({{data.location.tag_name}})</p>
+    <form>
+        <div class="row">
+            <div class="form-group col-md-6">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" name="firstName" class="form-control" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" name="lastName" class="form-control" required>
+            </div>
+        </div>
+      <div class="form-group">
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone <span class="required">*</span></label>
+        <div class="phone-group">
+          <select id="phoneCode" class="form-control">
+            <option value="+66">+66</option>
+            <!-- Add more country codes here if needed -->
+          </select>
+          <input type="text" id="phone" name="phone" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="resume">Resume/CV <span class="required">*</span></label>
+        <input type="file" id="resume" name="resume" class="form-control" required>
+      </div>
+    <button class="apply-button">Apply Now</button>
+    </form>
+  </div>
+  
+<div class="jobs-container">
+    <h2>Related</h2>
+    <a href="#" class="view-all-btn">View All Jobs</a>
+        
+    <table class="jobs-table">
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Team</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of jobs" [routerLink]="['/jobs', item.id]" fragment="home">
+                <td >{{item.title}}</td>
+                <td>{{item.team.tag_name}}</td>
+                <td>{{item.location.tag_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-footer></app-footer>

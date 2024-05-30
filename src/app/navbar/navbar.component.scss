@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    background-color: #fbfbfb;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    width: calc(100% - 200px); /* เพิ่มความกว้างแบบคงที่ */
+    max-width: 1200px; /* จำกัดความกว้างสูงสุด */
+    margin: 0 auto; /* จัดกึ่งกลาง */
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Responsive layout adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        width: calc(100% - 40px); /* ปรับความกว้างให้เหมาะสมกับอุปกรณ์พกพา */
+        margin: 0 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+.logo {
+    margin-left: 10px; /* ขยับโลโก้ไปทางขวาเล็กน้อย */
+}
+
+.logo img {
+    height: 60px;
+    max-width: 100%; /* เพิ่ม max-width */
+}
+
+.nav-links {
+    font-family: "Noto Sans", sans-serif;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px; /* ขยับ nav-links ไปทางซ้ายเล็กน้อย */
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+    padding: 10px 0;
+    word-break: break-all;
+    white-space: normal; /* เพิ่มส่วนนี้ */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-links a:hover {
+    color: #000000;
+}

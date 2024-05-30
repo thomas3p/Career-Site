@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <img src="/assets/img/background_teams.png" alt="Background Image" class="background-image">
+    <div class="text-overlay">
+        <h1>OUR</h1>
+        <p>Teams</p>
+    </div>
+</div>
+
+<div class="centered-content">
+    <h1>Teams</h1>
+    <p>digix collaborates to create access to information and develop products that enhance people's lives globally. We invite you to join us on this adventure. Want to be part of the team? Let's find the role that suits you at digix.</p>
+</div>
+
+<div class="card-container">
+    <div class="card" *ngFor="let item of cardData">
+        <img [src]="item.imageURL" class="card-img-top" alt="Card Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.detail }}</p>
+            <a [routerLink]="['/teams-detail', item.title]" class="card-link">Learn more</a>
+            <a [routerLink]="['/jobs/team',item.id]" class="card-link">View Jobs</a>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

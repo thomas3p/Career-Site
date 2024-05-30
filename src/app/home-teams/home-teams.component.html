@@ -1,0 +1,15 @@
+<div class="container-info">
+    <h1>Teams</h1>
+    <div class="blogs-slider">
+        <button class="slide-btn left" (click)="slide(-1)">↫</button>
+        <div #slider class="blogs-container">
+            <div class="section-blogs" *ngFor="let item of cardData">
+                <img [src]="item.imageURL" alt="Card Image">
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.detail }}</p>
+                <a [routerLink]="['/teams-detail', item.title]" class="card-link">Learn more</a>
+            </div>
+        </div>
+        <button class="slide-btn right" (click)="slide(1)">↬</button>
+    </div>        
+</div>

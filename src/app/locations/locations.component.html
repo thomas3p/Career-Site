@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <img src="/assets/img/background_locations.png" alt="Background Image" class="background-image">
+    <div class="text-overlay">
+        <h1>OUR</h1>
+        <p>Locations</p>
+    </div>
+</div>
+
+<div class="centered-content">
+    <h1>Locations</h1>
+    <p>Every location of Digix is designed to foster creativity and build a strong community.</p>
+</div>
+
+<div class="tab-container">
+    <button class="tab-button" (click)="changeLocation(16.405325957042376, 102.83715841821677, 'Khon Kaen')">Khon Kaen</button>
+    <button class="tab-button" (click)="changeLocation(13.746035425441598, 100.534401695429, 'Bangkok')">Bangkok</button>
+    <button class="tab-button" (click)="changeLocation(18.789006381637954, 98.98185642892204, 'Chiang Mai')">Chiang Mai</button>
+    <button class="tab-button" (click)="changeLocation(7.886111482241575, 98.39093829213884, 'Phuket')">Phuket</button>
+</div>
+
+<div id="map-container">
+    <div id="map"></div>
+</div>
+<app-footer></app-footer>

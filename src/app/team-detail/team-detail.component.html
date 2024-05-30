@@ -1,0 +1,101 @@
+<body>
+    <app-navbar></app-navbar>
+    <div class="container">
+        <img [src]="imageURL1" alt="Background Image" class="background-image">
+        <div class="text-overlay">
+            <p>{{ title }}</p>
+        </div>
+    </div>
+
+    <div class="container-image">
+        <div class="image">
+            <img [src]="imageURL2" alt="Image" width="500">
+        </div>
+        <div class="text-content">
+            <h1>{{ title }}</h1>
+            <p>{{ teaminfo1 }}</p>
+            <p>{{ teaminfo2 }}</p>
+            <p>{{ teaminfo3 }}</p>
+            <a href="/jobs" class="button">See All Jobs</a>
+        </div>
+    </div>
+
+    <div class="container-info">
+        <h1>Why work at Digix?</h1>
+        <div class="content">
+            <div class="section">
+                <img src="/assets/img/Team3.png" alt="Global impact image">
+                <h2>Opportunities for growth.</h2>
+                <p>
+                    At Digix, we believe that learning is a never-ending journey, and the development of team skills is crucial to the success of the organization. We emphasize providing our employees with opportunities for continuous learning and skill development through various means, such as participating in internal company training, attending external events and seminars, taking online courses, and sharing knowledge within the team. We believe that investing in the skill development of our employees is an investment that impacts the possibility of creating outstanding work and future growth.
+                </p>
+            </div>
+            <div class="section">
+                <img src="/assets/img/Team4.png" alt="Fueled to produce image">
+                <h2>Experienced team</h2>
+                <p>
+                    The Digix team comprises individuals with experience and expertise in various aspects of the digital industry. It includes personnel with quality experience from leading companies in the market and high technical expertise. Working with such experienced and excellent teams helps our employees gain knowledge and experience from true experts. It's also a great opportunity to build networks and learn from industry professionals.
+                </p>
+            </div>
+            <div class="section">
+                <img src="/assets/img/Team5.png" alt="Fun day image">
+                <h2>Challenging project</h2>
+                <p>
+                    At Digix, we focus on working with challenging projects and offering creative ideas. We have earned trust from clients and leading partners in the industry. We believe that working on challenging projects provides our employees with diverse and stimulating experiences, leading to their enthusiasm and ongoing skill enhancement. Working on challenging projects gives our employees opportunities to learn, develop new skills, and be part of creating successful and valuable outcomes for the organization.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-info">
+        <h1>Blogs</h1>
+        <div class="blogs-slider">
+            <button class="slide-btn left" (click)="slide(-1)">↫</button>
+            <div #slider class="blogs-container">
+                <div class="section-blogs" *ngFor="let blog of blogs">
+                    <img [src]="blog.image" [alt]="blog.alt">
+                    <h2>{{ blog.author }}</h2>
+                    <p>{{ blog.content }}</p>
+                </div>
+            </div>
+            <button class="slide-btn right" (click)="slide(1)">↬</button>
+        </div>        
+    </div>
+
+    <div class="jobs-container">
+        <h1>Position Desired</h1>
+        <a href="/jobs" class="view-all-btn">View All Jobs</a>
+        <table class="jobs-table">
+            <thead>
+                <tr>
+                    <th>Job</th>
+                    <th>Team</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ job1 }}</td>
+                    <td>{{ title }}</td>
+                    <td>Khon Kaen, Thailand</td>
+                </tr>
+                <tr>
+                    <td>{{ job2 }}</td>
+                    <td>{{ title }}</td>
+                    <td>Khon Kaen, Thailand</td>
+                </tr>
+                <tr>
+                    <td>{{ job3 }}</td>
+                    <td>{{ title }}</td>
+                    <td>Khon Kaen, Thailand</td>
+                </tr>
+                <tr>
+                    <td>{{ job4 }}</td>
+                    <td>{{ title }}</td>
+                    <td>Khon Kaen, Thailand</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<app-footer></app-footer>
