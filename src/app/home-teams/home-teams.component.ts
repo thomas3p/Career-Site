@@ -3,11 +3,11 @@ import { TeamsService } from '../Service/teams.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-teams',
-  templateUrl: './teams.component.html',
-  styleUrls: ['./teams.component.scss']
+  selector: 'app-home-teams',
+  templateUrl: './home-teams.component.html',
+  styleUrls: ['./home-teams.component.scss']
 })
-export class TeamsComponent implements OnInit {
+export class HomeTeamsComponent implements OnInit {
   cardData: any[] = [];
 
   @ViewChild('slider', { static: true }) slider!: ElementRef;
@@ -40,5 +40,5 @@ export class TeamsComponent implements OnInit {
         behavior: 'smooth'
     });
   }
-  
 }
+

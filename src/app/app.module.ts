@@ -3,6 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { LocationsComponent } from './locations/locations.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
+import { TeamsComponent } from './teams/teams.component';
+import { HomeTeamsComponent } from './home-teams/home-teams.component';
+import { HomeLocationsComponent } from './home-locations/home-locations.component';
+import { FooterComponent } from './footer/footer.component';
 import { JobComponent } from './job/job.component';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdminComponent } from './admin/admin.component';
@@ -29,6 +38,9 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     NavbarComponent,
     TeamDetailComponent,
     LocationsComponent,
+    HomeTeamsComponent,
+    HomeLocationsComponent,
+    FooterComponent
     AdminLoginComponent
   ],
   imports: [
