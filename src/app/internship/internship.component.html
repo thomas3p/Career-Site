@@ -1,0 +1,155 @@
+<app-header></app-header>
+<div class="container-fluid p-0">
+    <div class="row justify-content-center">
+        <div class="col-md-12 p-0">
+            <div class="position-relative">
+                <img style="height: 20rem; width: 100%; object-fit: cover;" 
+                     src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                     class="img-fluid" alt="...">
+                <div class="students position-absolute" 
+                     style="bottom: 10px; left: 60px; color: white; padding: 20px; font-size: 40px; ">
+                     Internship
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-7">
+            <h3 class="font-weight-bold">Students</h3>
+            <p class="text-justify">
+                No matter which year or which program of school you are in, Agoda always looks for the best young talents to
+                contribute to our critical projects. Across multiple teams, we provide opportunities for you to work with
+                diverse, top-tier colleagues on projects that matter. Through our flat organizational structure, your
+                opinions are always valued and encouraged. Come start and grow your career with us and let’s inspire travel
+                together!
+                <br><br>
+                We welcome all students currently enrolled in a college, university, or graduate program to apply for our
+                internship and co-operative opportunities. All recent grads are eligible for full-time opportunities.
+            </p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">View Featured Jobs</a>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <img style="height: 20rem; width: 100%; object-fit: cover;" 
+                 src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                 class="img-fluid" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h3 class="font-weight-bold">Internship Programs</h3>
+    <div class="row">
+        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-4">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-between" style="height: 20rem;">
+                    <div>
+                        <h4 class="card-title" style="font-size: 20px;">Summer Internship</h4>
+                        <h6 class="card-text" style="font-size: 15px;">8-10 weeks, May - June</h6>
+                        <p class="card-text" style="font-size: 13px;">Digix’s Summer Internship Program is an opportunity like no other. Not only will you gain hands-on work experience at one of the leading tech companies, but you’ll also meet like-minded people, build valuable skills, and discover new passions through a curated learning program. Our 8-week paid internship program is the perfect way to kick-start your career.</p>
+                    </div>
+                    <a href="contentInternship" type="button" class="btn btn-primary rounded-pill btn-sm align-self-start" 
+                       style="position: relative; bottom: 0; margin-top: auto;">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let item of content" class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mt-4">
+            <div class="card shadow-sm">
+                <div class="card-body d-flex flex-column justify-content-between" style="height: 20rem;">
+                    <div>
+                        <h4 class="card-title" style="font-size: 20px;">{{ item.type }}</h4>
+                        <h6 class="card-text" style="font-size: 15px;">{{ item.duration }}</h6>
+                        <p class="card-text" style="font-size: 13px;">{{ item.text }}</p>
+                    </div>
+                    <a type="button" class="btn btn-primary rounded-pill btn-sm align-self-start" 
+                       style="position: relative; bottom: 0; margin-top: auto;">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-custom shadow-sm">
+                <div class="row no-gutters">
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             class="card-img" alt="Image" style="height: 20rem; width: 100%; object-fit: cover;">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title font-weight-bold">Are you a fresh grad or about to Digix?</h5>
+                            <p class="card-text text-justify">We’d love for you to join us! Agoda has more than 100 job openings across departments for early talent just like you. If you have 0-2 years of experience, this is the perfect way to start your career on the right path.</p>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">View open jobs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="font-weight-bold">Position Desired</h3>
+        <a type="button" class="btn btn-primary rounded-pill btn-sm">Join Now</a>
+    </div>
+    <table class="table table-hover shadow-sm">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Job</th>
+                <th scope="col">Team</th>
+                <th scope="col">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item2 of job">
+                <th scope="row">{{item2.jobID}}</th>
+                <td>{{item2.job}}</td>
+                <td>{{item2.team}}</td>
+                <td>{{item2.location}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container mt-5">
+    <h1 class="mb-4 font-weight-bold">Latest Blogs</h1>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card blog-card shadow-sm">
+                <img src="https://media.istockphoto.com/id/1488318067/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%AA%E0%B8%A7%E0%B8%B1%E0%B8%AA%E0%B8%94%E0%B8%B5-%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%96%E0%B8%96%E0%B8%B2%E0%B8%A1%E0%B8%84%E0%B9%8D%E0%B8%B2%E0%B8%96%E0%B8%B2%E0%B8%A1.jpg?s=1024x1024&w=is&k=20&c=DATIqLSNxlrGOodDor4_scT6UR4ZgFvlFen3MyPGhtA=" 
+                     class="card-img-top" alt="Blog Image">
+                <div class="card-body">
+                    <p class="blog-category mb-2">Internship <span class="blog-date">August 4, 2023</span></p>
+                    <h5 class="card-title font-weight-bold">Agoda Summer Internship 2023: How we set our interns up for success</h5>
+                    <p class="card-text text-justify">As Agoda’s internship program comes to a close, we’re looking back on an eventful summer filled with new experiences. Our paid internship program brings in students from top universities across Thailand and abroad to work with our world-class teams in the heart of Bangkok. For this year’s program, 138 interns joined us for a summer of impactful projects, hands-on learning, and lifelong connections.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card blog-card shadow-sm">
+                <img src="https://media.istockphoto.com/id/1187816641/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A3%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B9%83%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B8%E0%B8%A1.jpg?s=1024x1024&w=is&k=20&c=N3hRMBWl-blS_JJeelb824xIo3tDr5qehq3L6fBx4v8=" 
+                     class="card-img-top" alt="Blog Image">
+                <div class="card-body">
+                    <p class="blog-category mb-2">Internship <span class="blog-date">June 9, 2023</span></p>
+                    <h5 class="card-title font-weight-bold">How we kicked off Agoda’s Summer Internship Program: Intern Learning Week 2023</h5>
+                    <p class="card-text text-justify">Agoda’s Summer Internship program always shines as a standout experience. Each year, we welcome a new cohort of students who bring a burst of fresh ideas and enthusiasm to our teams. This summer, we ushered in the 2023 cohort with our Intern Learning Week, a 3-day event filled with workshops, activities, and authentic conversations to start our interns off on the right foot.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
