@@ -132,11 +132,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative; /* Needed for absolute positioning of buttons */
 }
 
 .blogs-container {
     display: flex;
     overflow-x: auto;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.blogs-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
 }
 
 .section-blogs {
@@ -145,11 +153,12 @@ body {
     padding: 20px;
     flex: 1;
     margin: 10px;
-    padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-blogs:hover {
@@ -172,26 +181,30 @@ body {
 .section-blogs p {
     font-size: 16px;
     color: #666;
+    flex-grow: 1;
 }
 
 .slide-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    background-color: transparent; /* No background */
+    color: grey; /* Grey color */
     border: none;
-    padding: 10px;
-    cursor: pointer;
+    cursor: pointer; /* Add cursor pointer */
     z-index: 1;
+    font-size: 2em; /* Larger font size */
+    line-height: 1; /* Ensure arrows are not cut off */
+    padding: 0 20px; /* Add some padding for better clickability */
 }
 
+
 .slide-btn.left {
-    left: 10px;
+    left: -70px; /* Adjust if needed to add spacing from the card */
 }
 
 .slide-btn.right {
-    right: 10px;
+    right: -70px; /* Adjust if needed to add spacing from the card */
 }
 
 //jobs section

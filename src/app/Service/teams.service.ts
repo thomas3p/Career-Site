@@ -33,7 +33,7 @@ export class TeamsService {
       job4: 'Senior UX/UI Engineer, Android',
     },
     {
-      title: 'Marketing & Communications',
+      title: 'Marketing',
       detail: 'Connect users to the product magic.',
       imageURL: 'assets/img/Marketing.png',
       imageURL1: 'assets/img/background_marketing.png',
@@ -82,7 +82,33 @@ export class TeamsService {
       job2: 'People Data & Automations Specialist',
       job3: 'Director, People & Culture',
       job4: 'Employee Experience Specialist',
-    }
+    },
+    {
+      title: 'Content',
+      detail: 'Develop the products and tools of the future for billions of users.',
+      imageURL: 'assets/img/Content.png',
+      imageURL1: 'assets/img/background_technology.png',
+      imageURL2: 'assets/img/Content.png',
+      teaminfo1: 'Digix’s technology team is a global mix of top talent, revolutionizing the digital solutions landscape with a diverse tech stack. We use a variety of languages, frameworks, and tools, reflecting our commitment to staying at the forefront of technology.',
+      teaminfo2: 'Our solutions enhance digital experiences for millions, presenting unique challenges that constantly drive us to innovate and improve. However, we’re not just about work. We believe in enjoying the journey, fostering a culture of collaboration, creativity, and continuous learning. We celebrate our successes and have fun along the way.',
+      job1: 'Machine Learning – Staff Engineer',
+      job2: 'Senior Software Engineer – Full Stack',
+      job3: 'Senior Database Developer',
+      job4: 'IT Support',
+    },
+    {
+      title: 'Product',
+      detail: 'Develop the products and tools of the future for billions of users.',
+      imageURL: 'assets/img/Product.png',
+      imageURL1: 'assets/img/background_technology.png',
+      imageURL2: 'assets/img/Product.png',
+      teaminfo1: 'Digix’s technology team is a global mix of top talent, revolutionizing the digital solutions landscape with a diverse tech stack. We use a variety of languages, frameworks, and tools, reflecting our commitment to staying at the forefront of technology.',
+      teaminfo2: 'Our solutions enhance digital experiences for millions, presenting unique challenges that constantly drive us to innovate and improve. However, we’re not just about work. We believe in enjoying the journey, fostering a culture of collaboration, creativity, and continuous learning. We celebrate our successes and have fun along the way.',
+      job1: 'Machine Learning – Staff Engineer',
+      job2: 'Senior Software Engineer – Full Stack',
+      job3: 'Senior Database Developer',
+      job4: 'IT Support',
+    },
   ];
 
   constructor() { }

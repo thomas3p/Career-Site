@@ -16,10 +16,12 @@
     <div class="card" *ngFor="let item of cardData">
         <img [src]="item.imageURL" class="card-img-top" alt="Card Image">
         <div class="card-body">
-          <h5 class="card-title">{{ item.title }}</h5>
-          <p class="card-text">{{ item.detail }}</p>
-          <a [routerLink]="['/teams-detail', item.title]" class="card-link">Learn more</a>
-          <a href="#" (click)="viewJobs(item)" class="card-link">View Jobs</a>
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.detail }}</p>
+            <a [routerLink]="['/teams-detail', item.title]" class="card-link">Learn more</a>
+            <a href="#" (click)="viewJobs(item)" class="card-link">View Jobs</a>
         </div>
     </div>
-</div>  
+</div>
+<app-footer></app-footer>
+
