@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-navbar></app-navbar>
+
 <div class="container-fluid p-0">
     <div class="row justify-content-center">
         <div class="col-md-12 p-0">
@@ -30,7 +31,7 @@
                 internship and co-operative opportunities. All recent grads are eligible for full-time opportunities.
             </p>
             <div class="btn-group">
-                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">View Featured Jobs</a>
+                <a [routerLink]="['/internship']" fragment="jobdes" class="btn btn-outline-primary btn-sm rounded-pill">View Featured Jobs</a>
             </div>
         </div>
         <div class="col-md-5">
@@ -96,31 +97,32 @@
         </div>
     </div>
 </div>
-
-<div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3 class="font-weight-bold">Position Desired</h3>
-        <a type="button" class="btn btn-primary rounded-pill btn-sm">Join Now</a>
+<section id="jobdes">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="font-weight-bold">Position Desired</h3>
+            <a href="/jobs" type="button" class="btn btn-primary rounded-pill btn-sm">Join Now</a>
+        </div>
+        <table class="table table-hover shadow-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Job</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item2 of jobs" [routerLink]="['/jobs', item2.id]">
+                    <th scope="row">{{item2.id}}</th>
+                    <td>{{item2.title}}</td>
+                    <td>{{item2.team.tag_name}}</td>
+                    <td>{{item2.location.tag_name}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table table-hover shadow-sm">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Job</th>
-                <th scope="col">Team</th>
-                <th scope="col">Location</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item2 of job">
-                <th scope="row">{{item2.jobID}}</th>
-                <td>{{item2.job}}</td>
-                <td>{{item2.team}}</td>
-                <td>{{item2.location}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+</section>
 
 <div class="container mt-5">
     <h1 class="mb-4 font-weight-bold">Latest Blogs</h1>

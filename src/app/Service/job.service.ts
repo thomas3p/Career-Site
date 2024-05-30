@@ -11,6 +11,16 @@ export class JobService {
     
   }
   getjob(){
+    this.http.get('http://localhost:3000/jobs').subscribe(
+          request=>{
+            this.jobs = request
+            console.log(this.jobs);
+          }
+        )
+    
     return this.jobs
+  }
+  edtitjob(job:any){
+    this.jobs = job
   }
 }
