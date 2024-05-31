@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { JobService } from 'src/app/Service/job.service';
 
 @Component({
   selector: 'app-job',
@@ -20,23 +21,16 @@ export class JobComponent {
   constructor(
     private route: ActivatedRoute,
     private http: HttpClient,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private jobserv:JobService
   ){
     this.route.params.subscribe(param => {
       this.id = param['id']
+      this.data = jobserv.getJobById(this.id)
+      this.jobs = jobserv.getjob()
+      // console.log(this.jobs);
+      
     })
-    this.http.get('http://localhost:3000/jobs/'+this.id).subscribe(
-      request=>{
-        this.data = request
-        this.http.get('http://localhost:3000/jobs/team/'+this.data.team.id).subscribe(
-        req=>{
-        this.jobs = req
-        console.log(req);
-        console.log(this.jobs);
-      }
-    )
-      }
-    )
     this.applicationForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
