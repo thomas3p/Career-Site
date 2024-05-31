@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ContentService } from 'src/content.service';
 import { Router } from '@angular/router';
-import { JobService } from '../Service/job.service';
+// import { JobService } from '../Service/job.service';
 import { HttpClient } from '@angular/common/http';
+import { JobService } from 'src/app/Service/job.service';
 
 @Component({
   selector: 'app-internship',
@@ -17,14 +18,8 @@ export class InternshipComponent implements OnInit{
     this.showAllContent();
     this.showAllJobs();
   }
-  constructor(private contentService: ContentService, private router: Router,private jobservice:JobService,private http: HttpClient) {
-    this.http.get('http://localhost:3000/jobs').subscribe(
-          request=>{
-            this.jobs = request
-            console.log(this.jobs);
-            
-          }
-        )
+  constructor(private contentService: ContentService, private router: Router,private jobsserv:JobService) {
+  this.jobs = jobsserv.getjob()
    }
 
   showAllContent() {

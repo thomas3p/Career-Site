@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { JobService } from '../Service/job.service';
+// import { JobService } from '../Service/job.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

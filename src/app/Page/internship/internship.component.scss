@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&display=swap');
+
+.text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    color: white;
+    font-family: 'Edu TAS Beginner', sans-serif;
+    padding: 10px 20px;
+}
+
+.text-overlay h1,
+.text-overlay p {
+    margin-left: 50px;
+}
+
+.text-overlay p {
+    font-size: 90px;
+}
+.text-justify {
+    text-align: justify;
+}
+
+.blog-category {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: #adb5bd;
+    margin-left: 0.5rem;
+}
+
+.blog-card:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.shadow-sm {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.font-weight-bold {
+    font-weight: bold;
+}
+//jobs section
+.jobs-container {
+    font-family: "Noto Sans", sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.jobs-container h1 {
+    font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 0;
+}
+
+.jobs-container .jobs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.jobs-container th, .jobs-container td {
+    border: none;
+    padding: 20px;
+    text-align: left;
+}
+
+.jobs-container th {
+    background-color: #ffffff; 
+    font-weight: bold;
+    color: #7d7d7d;
+}
+
+.jobs-container .jobs-table tbody {
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.jobs-container .jobs-table tbody tr {
+    margin-bottom: 10px; 
+    color: #000000; 
+    transition: background-color 0.3s, color 0.3s; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.jobs-container .jobs-table tbody tr:hover {
+    background-color: #005eff; 
+    color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.jobs-container .view-all-btn {
+    font-family: "Noto Sans", sans-serif;
+    display: block;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background-color: #005eff;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    float: right;
+}

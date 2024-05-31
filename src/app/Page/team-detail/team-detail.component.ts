@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TeamsService } from '../Service/teams.service';
+import { TeamsService } from 'src/app/Service/teams.service';
 
 @Component({
   selector: 'app-team-detail',

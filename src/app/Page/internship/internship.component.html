@@ -7,8 +7,8 @@
                 <img style="height: 20rem; width: 100%; object-fit: cover;" 
                      src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                      class="img-fluid" alt="...">
-                <div class="students position-absolute" 
-                     style="bottom: 10px; left: 60px; color: white; padding: 20px; font-size: 40px; ">
+                <div class="students position-absolute text-overlay" 
+                     style="bottom: 10px; left: 60px; color: white; padding: 20px; font-size: 65px; ">
                      Internship
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         <h6 class="card-text" style="font-size: 15px;">{{ item.duration }}</h6>
                         <p class="card-text" style="font-size: 13px;">{{ item.text }}</p>
                     </div>
-                    <a type="button" class="btn btn-primary rounded-pill btn-sm align-self-start" 
+                    <a href="/jobs" type="button" class="btn btn-primary rounded-pill btn-sm align-self-start" 
                        style="position: relative; bottom: 0; margin-top: auto;">Join Now</a>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                             <h5 class="card-title font-weight-bold">Are you a fresh grad or about to Digix?</h5>
                             <p class="card-text text-justify">We’d love for you to join us! Agoda has more than 100 job openings across departments for early talent just like you. If you have 0-2 years of experience, this is the perfect way to start your career on the right path.</p>
                             <div class="btn-group">
-                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">View open jobs</a>
+                                <a href="/jobs" class="btn btn-outline-primary btn-sm rounded-pill">View open jobs</a>
                             </div>
                         </div>
                     </div>
@@ -97,32 +97,26 @@
         </div>
     </div>
 </div>
-<section id="jobdes">
-    <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h3 class="font-weight-bold">Position Desired</h3>
-            <a href="/jobs" type="button" class="btn btn-primary rounded-pill btn-sm">Join Now</a>
-        </div>
-        <table class="table table-hover shadow-sm">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Job</th>
-                    <th scope="col">Team</th>
-                    <th scope="col">Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item2 of jobs" [routerLink]="['/jobs', item2.id]">
-                    <th scope="row">{{item2.id}}</th>
-                    <td>{{item2.title}}</td>
-                    <td>{{item2.team.tag_name}}</td>
-                    <td>{{item2.location.tag_name}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+<div class="jobs-container" id="jobdes">
+    <h1>Position Desired</h1>
+    <a href="/jobs" class="view-all-btn">View All Jobs</a>
+    <table class="jobs-table">
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Team</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of jobs" [routerLink]="['/jobs', item.id]" fragment="home"> 
+                <td >{{item.title}}</td>
+                <td>{{item.team.tag_name}}</td>
+                <td>{{item.location.tag_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <div class="container mt-5">
     <h1 class="mb-4 font-weight-bold">Latest Blogs</h1>
@@ -135,7 +129,6 @@
                     <p class="blog-category mb-2">Internship <span class="blog-date">August 4, 2023</span></p>
                     <h5 class="card-title font-weight-bold">Agoda Summer Internship 2023: How we set our interns up for success</h5>
                     <p class="card-text text-justify">As Agoda’s internship program comes to a close, we’re looking back on an eventful summer filled with new experiences. Our paid internship program brings in students from top universities across Thailand and abroad to work with our world-class teams in the heart of Bangkok. For this year’s program, 138 interns joined us for a summer of impactful projects, hands-on learning, and lifelong connections.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
                 </div>
             </div>
         </div>
@@ -147,7 +140,6 @@
                     <p class="blog-category mb-2">Internship <span class="blog-date">June 9, 2023</span></p>
                     <h5 class="card-title font-weight-bold">How we kicked off Agoda’s Summer Internship Program: Intern Learning Week 2023</h5>
                     <p class="card-text text-justify">Agoda’s Summer Internship program always shines as a standout experience. Each year, we welcome a new cohort of students who bring a burst of fresh ideas and enthusiasm to our teams. This summer, we ushered in the 2023 cohort with our Intern Learning Week, a 3-day event filled with workshops, activities, and authentic conversations to start our interns off on the right foot.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
                 </div>
             </div>
         </div>
