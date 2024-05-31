@@ -19,10 +19,10 @@ import { HomeTeamsComponent } from './home-teams/home-teams.component';
 import { HomeLocationsComponent } from './home-locations/home-locations.component';
 import { JobComponent } from './job/job.component';
 import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AdminComponent } from './admin/admin.component';
+// import { AdminComponent } from './admin/admin.component';
 import { JobListComponent } from './job-list/job-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
+// import { AdminLoginComponent } from './admin-login/admin-login.component';
 // import { LoginCardComponent } from './login-card/login-card.component';
 
 
@@ -36,7 +36,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     ContentInternshipComponent,
   
     JobComponent,
-    AdminComponent,
+    // AdminComponent,
     JobListComponent,
     TeamsComponent,
     NavbarComponent,
@@ -45,7 +45,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     HomeTeamsComponent,
     HomeLocationsComponent,
     FooterComponent,
-    AdminLoginComponent
+    // AdminLoginComponent
   ],
   imports: [
     BrowserModule,
